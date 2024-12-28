@@ -191,4 +191,13 @@ const flags = {
         { bit: 1073741824, name: "CREATURE_FLAG_EXTRA_IMMUNITY_KNOCKBACK" },
         { bit: 2147483648, name: "CREATURE_FLAG_EXTRA_HARD_RESET" }
     ],
+    spell_school_mask: [
+        { bit: 1, name: "SPELL_SCHOOL_MASK_NORMAL" },
+        { bit: 2, name: "SPELL_SCHOOL_MASK_HOLY" },
+        { bit: 4, name: "SPELL_SCHOOL_MASK_FIRE" },
+        { bit: 8, name: "SPELL_SCHOOL_MASK_NATURE" },
+        { bit: 16, name: "SPELL_SCHOOL_MASK_FROST" },
+        { bit: 32, name: "SPELL_SCHOOL_MASK_SHADOW" },
+        { bit: 64, name: "SPELL_SCHOOL_MASK_ARCANE" }
+    ],
 };
