@@ -1,30 +1,12 @@
-// Define the different flag categories
-const flagCategories = {
-    mechanicImmunity: [
-        { id: 1, name: 'Immune to Stun' },
-        { id: 2, name: 'Immune to Silence' },
-        { id: 4, name: 'Immune to Fear' },
-        { id: 8, name: 'Immune to Charm' },
-        { id: 16, name: 'Immune to Sleep' },
-    ],
-    creatureExtraFlags: [
-        { id: 1, name: 'Can Swim' },
-        { id: 2, name: 'Is Ghost' },
-        { id: 4, name: 'Can Fly' },
-        { id: 8, name: 'Is Summoned' },
-        { id: 16, name: 'Can Target Players' },
-    ]
-};
-
 // Function to check flags based on input
 function checkFlags() {
-    // Get the selected flag category
+    // Get the selected flag category from the dropdown
     const selectedCategory = document.getElementById('flagCategory').value;
 
-    // Get the flags for the selected category
-    const selectedFlags = flagCategories[selectedCategory];
+    // Get the flags for the selected category from the flags object
+    const selectedFlags = flags[selectedCategory];
 
-    // Get the input flag value
+    // Get the input flag value from the user
     const inputFlag = parseInt(document.getElementById('flagInput').value);
 
     // Display the input value after "Flags Included:"
@@ -37,7 +19,7 @@ function checkFlags() {
     }
 
     // Filter the flags that are included in the bitwise input
-    const flagsIncluded = selectedFlags.filter(flag => (inputFlag & flag.id) !== 0);
+    const flagsIncluded = selectedFlags.filter(flag => (inputFlag & flag.bit) !== 0);
 
     // Display the result
     const flagList = document.getElementById('flagList');
@@ -46,7 +28,7 @@ function checkFlags() {
     if (flagsIncluded.length > 0) {
         flagsIncluded.forEach(flag => {
             const listItem = document.createElement('li');
-            listItem.textContent = flag.name;
+            listItem.textContent = `${flag.bit} - ${flag.name}`;
             flagList.appendChild(listItem);
         });
     } else {

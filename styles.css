@@ -10,7 +10,7 @@ body {
 }
 
 h1, label, h4 {
-    color: #ffff
+    color: whitesmoke
 }
 
 .container {
@@ -39,8 +39,8 @@ button {
     border-radius: 20px;
     border: none;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    background-color: #ff0000;
-    color: white;
+    background-color: #d60202;
+    color: whitesmoke;
     cursor: pointer;
 }
 
@@ -56,13 +56,13 @@ ul {
 
 li {
     text-align: left;
-    color: #ffff;
+    color: whitesmoke;
     padding: 5px;
 }
 
 /* Style the select dropdown specifically */
 #flagCategory {
-    color: #ffff;
+    color: whitesmoke;
     font-size: 16px; /* Font size */
     padding: 10px;
     width: 80%;
