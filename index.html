@@ -8,7 +8,8 @@
 </head>
 <body>
     <div class="container">
-        <h1>Bitwise Flag Checker</h1>
+        <img src="logo.png" width="173" height="114">
+        <h1>AzerothCore Flag Checker</h1>
         
         <!-- Dropdown to select flag category -->
         <label for="flagCategory">Choose Flag Category:</label>
@@ -19,11 +20,11 @@
         
         <br>
         <!-- Input to enter the bitwise flag -->
-        <label for="flagInput">Enter a Bitwise Flag (e.g., 7):</label>
+        <label for="flagInput">Enter a bitmask value:</label>
         <input type="number" id="flagInput" placeholder="Enter a number" min="0" />
         <button onclick="checkFlags()">Check Flags</button>
 
-        <h4 id="inputValueDisplay">Flags included for bitmask value :</h4>
+        <h4 id="inputValueDisplay"></h4>
         <ul id="flagList"></ul>
     </div>
 

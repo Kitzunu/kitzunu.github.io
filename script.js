@@ -29,7 +29,7 @@ function checkFlags() {
 
     // Display the input value after "Flags Included:"
     const inputValueDisplay = document.getElementById('inputValueDisplay');
-    inputValueDisplay.textContent = `You entered: ${inputFlag}`;
+    inputValueDisplay.textContent = `Flags included for bitmask value: ${inputFlag}`;
 
     if (isNaN(inputFlag)) {
         alert('Please enter a valid number!');
