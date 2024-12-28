@@ -1,25 +1,43 @@
-// Define the flags (these can be adjusted to fit your needs)
-const predefinedFlags = [
-    { id: 1, name: 'Flag 1' },
-    { id: 2, name: 'Flag 2' },
-    { id: 4, name: 'Flag 3' },
-    { id: 8, name: 'Flag 4' },
-    { id: 16, name: 'Flag 5' },
-    { id: 32, name: 'Flag 6' },
-    { id: 64, name: 'Flag 7' },
-    { id: 128, name: 'Flag 8' },
-];
+// Define the different flag categories
+const flagCategories = {
+    mechanicImmunity: [
+        { id: 1, name: 'Immune to Stun' },
+        { id: 2, name: 'Immune to Silence' },
+        { id: 4, name: 'Immune to Fear' },
+        { id: 8, name: 'Immune to Charm' },
+        { id: 16, name: 'Immune to Sleep' },
+    ],
+    creatureExtraFlags: [
+        { id: 1, name: 'Can Swim' },
+        { id: 2, name: 'Is Ghost' },
+        { id: 4, name: 'Can Fly' },
+        { id: 8, name: 'Is Summoned' },
+        { id: 16, name: 'Can Target Players' },
+    ]
+};
 
 // Function to check flags based on input
 function checkFlags() {
+    // Get the selected flag category
+    const selectedCategory = document.getElementById('flagCategory').value;
+
+    // Get the flags for the selected category
+    const selectedFlags = flagCategories[selectedCategory];
+
+    // Get the input flag value
     const inputFlag = parseInt(document.getElementById('flagInput').value);
+
+    // Display the input value after "Flags Included:"
+    const inputValueDisplay = document.getElementById('inputValueDisplay');
+    inputValueDisplay.textContent = `You entered: ${inputFlag}`;
 
     if (isNaN(inputFlag)) {
         alert('Please enter a valid number!');
         return;
     }
 
-    const flagsIncluded = predefinedFlags.filter(flag => (inputFlag & flag.id) !== 0);
+    // Filter the flags that are included in the bitwise input
+    const flagsIncluded = selectedFlags.filter(flag => (inputFlag & flag.id) !== 0);
 
     // Display the result
     const flagList = document.getElementById('flagList');
