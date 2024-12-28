@@ -9,14 +9,14 @@ function checkFlags() {
     // Get the input flag value from the user
     const inputFlag = parseInt(document.getElementById('flagInput').value);
 
-    // Display the input value after "Flags Included:"
-    const inputValueDisplay = document.getElementById('inputValueDisplay');
-    inputValueDisplay.textContent = `Flags included for bitmask value: ${inputFlag}`;
-
     if (isNaN(inputFlag)) {
         alert('Please enter a valid number!');
         return;
     }
+
+    // Display the input value after "Flags Included:"
+    const inputValueDisplay = document.getElementById('inputValueDisplay');
+    inputValueDisplay.textContent = `Flags included for bitmask value: ${inputFlag}`;
 
     // Filter the flags that are included in the bitwise input
     const flagsIncluded = selectedFlags.filter(flag => (inputFlag & flag.bit) !== 0);
